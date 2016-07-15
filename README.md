@@ -7,10 +7,10 @@ Integrate depth frames into a fused projective TSDF volume using GPU (with CUDA)
 2. NVIDIA graphics card and CUDA
 
 ## Compilation
-`./compile`
+`./compile.sh`
 
 ## Sample Usage
-`./kinfu`
+`./run.sh`
 
 ## References
 [Paper Link](https://graphics.stanford.edu/papers/volrange/volrange.pdf)
