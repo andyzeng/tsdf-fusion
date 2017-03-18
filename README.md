@@ -1,7 +1,9 @@
 # Volumetric TSDF Fusion of Multiple Depth Maps
 CUDA/C++ code to fuse multiple registered depth maps into a projective truncated signed distance function (TSDF) voxel volume, which can then be used to create high quality 3D surface meshes and point clouds.
 
-Looking for an older version? See [here](old-version)
+Looking for an older version? See [here](old-version).
+
+This repository is a part of [Andy's Code Collection](http://www.cs.princeton.edu/~andyz/code).
 
 ## Requirements
  * NVIDA GPU with [CUDA](https://developer.nvidia.com/cuda-downloads) support
