@@ -23,7 +23,7 @@ This demo fuses 50 registered depth maps from directory `data/rgbd-frames` into 
 [Optional] This demo also saves the computed voxel volume into a binary file `tsdf.bin`. Run the following script in Matlab to create a 3D surface mesh `mesh.ply`, which can be visualized with [Meshlab](http://www.meshlab.net/).
 
 ```matlab
-tsdf2mesh; # 3D mesh saved to mesh.ply
+tsdf2mesh; % 3D mesh saved to mesh.ply
 ```
 
 ## Seen in
