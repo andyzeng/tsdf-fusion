@@ -1,4 +1,7 @@
 # Volumetric TSDF Fusion of Multiple Depth Maps
+
+![Teaser](teaser.jpg?raw=true)
+
 CUDA/C++ code to fuse multiple registered depth maps into a projective truncated signed distance function (TSDF) voxel volume, which can then be used to create high quality 3D surface meshes and point clouds.
 
 Looking for an older version? See [here](old-version).
@@ -14,7 +17,13 @@ This demo fuses 50 registered depth maps from directory `data/rgbd-frames` into 
 
 ```shell
 ./compile.sh # compiles demo executable
-./demo # output saved to tsdf.ply
+./demo # 3D point cloud saved to tsdf.ply and voxel grid saved to tsdf.bin
+```
+
+[Optional] This demo also saves the computed voxel volume into a binary file `tsdf.bin`. Run the following script in Matlab to create a 3D surface mesh `mesh.ply`, which can be visualized with [Meshlab](http://www.meshlab.net/).
+
+```matlab
+tsdf2mesh; # 3D mesh saved to mesh.ply
 ```
 
 ## Seen in
@@ -25,3 +34,4 @@ This demo fuses 50 registered depth maps from directory `data/rgbd-frames` into 
 ## References
  * [A Volumetric Method for Building Complex Models from Range Images (SIGGRAPH 1996)](https://graphics.stanford.edu/papers/volrange/volrange.pdf)
  * [KinectFusion: Real-Time Dense Surface Mapping and Tracking (ISMAR 2011)](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ismar2011.pdf)
+ * [Scene Coordinate Regression Forests for Camera Relocalization in RGB-D Images (CVPR 2013)](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/RelocForests.pdf)
