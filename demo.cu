@@ -48,7 +48,8 @@ void Integrate(float * cam_K, float * cam2base, float * depth_im,
     if (depth_val <= 0 || depth_val > 6)
       continue;
 
-    float diff = (depth_val - pt_cam_z) * sqrtf(1 + powf((pt_cam_x / pt_cam_z), 2) + powf((pt_cam_y / pt_cam_z), 2));
+    float diff = depth_val - pt_cam_z;
+
     if (diff <= -trunc_margin)
       continue;
 
