@@ -187,7 +187,7 @@ int main(int argc, char * argv[]) {
   std::cout << "Saving surface point cloud (tsdf.ply)..." << std::endl;
   SaveVoxelGrid2SurfacePointCloud("tsdf.ply", voxel_grid_dim_x, voxel_grid_dim_y, voxel_grid_dim_z, 
                                   voxel_size, voxel_grid_origin_x, voxel_grid_origin_y, voxel_grid_origin_z,
-                                  voxel_grid_TSDF, voxel_grid_weight, 0.2f, 1.0f);
+                                  voxel_grid_TSDF, voxel_grid_weight, 0.2f, 0.0f);
 
   // Save TSDF voxel grid and its parameters to disk as binary file (float array)
   std::cout << "Saving TSDF voxel grid values to disk (tsdf.bin)..." << std::endl;
