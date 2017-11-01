@@ -7,11 +7,13 @@
 % ---------------------------------------------------------
 
 % Load TSDF voxel grid from binary file
-voxelGridDimX = 500;
-voxelGridDimY = 500;
-voxelGridDimZ = 500;
 fid = fopen('tsdf.bin','rb');
-tsdf = fread(fid,voxelGridDimX*voxelGridDimY*voxelGridDimZ,'single');
+tsdfHeader = fread(fid,8,'single');
+voxelGridDim = tsdfHeader(1:3);
+voxelGridOrigin = tsdfHeader(4:6);
+voxelSize = tsdfHeader(7);
+truncMargin = tsdfHeader(8);
+tsdf = fread(fid,voxelGridDim(1)*voxelGridDim(2)*voxelGridDim(3),'single');
 fclose(fid);
 
 % Convert from TSDF to mesh  
@@ -20,14 +22,16 @@ fv = isosurface(tsdf,0);
 points = fv.vertices';
 faces = fv.faces';
 
-% Get mesh color
+% Set mesh color (light blue)
 color = uint8(repmat([175;198;233],1,size(points,2)));
 
-% Flip Y axis of mesh coordinates (for visualization)
-points(2,:) = -points(2,:);
+% Transform mesh from voxel coordinates to camera coordinates
+meshPoints(1,:) = voxelGridOrigin(1) + points(2,:)*voxelSize; % x y axes are swapped from isosurface
+meshPoints(2,:) = voxelGridOrigin(2) + points(1,:)*voxelSize;
+meshPoints(3,:) = voxelGridOrigin(3) + points(3,:)*voxelSize;
 
 % Write header for mesh file
-data = reshape(typecast(reshape(single(points),1,[]),'uint8'),3*4,[]);
+data = reshape(typecast(reshape(single(meshPoints),1,[]),'uint8'),3*4,[]);
 data = [data; color];
 fid = fopen('mesh.ply','w');
 fprintf (fid, 'ply\n');
