@@ -9,7 +9,7 @@ Looking for an older version? See [here](old-version).
 This repository is a part of [Andy's Code Collection](http://www.cs.princeton.edu/~andyz).
 
 ## Change Log
-* **Nov. 1, 2017.** Bug fix: voxel grid origin in `tsdf2mesh.m` should reflect x-y axes swap.
+* **Nov. 10, 2017.** Bug fix: voxel grid origin in `tsdf2mesh.m` should reflect x-y axes swap.
 * **Nov. 1, 2017.** Bug fix: `tsdf2mesh.m` now properly generates a mesh in camera coordinates instead of voxel coordinates.
 * **Oct. 30, 2017.** Notice: changed default weight threshold for `SaveVoxelGrid2SurfacePointCloud` in demo code to enable creating point cloud visualizations with only one depth frame.
 * **Aug. 30, 2017.** Bug fix: remove deprecated offsets from surface distance compute during integration.
