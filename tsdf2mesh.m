@@ -26,8 +26,8 @@ faces = fv.faces';
 color = uint8(repmat([175;198;233],1,size(points,2)));
 
 % Transform mesh from voxel coordinates to camera coordinates
-meshPoints(1,:) = voxelGridOrigin(2) + points(2,:)*voxelSize; % x y axes are swapped from isosurface
-meshPoints(2,:) = voxelGridOrigin(1) + points(1,:)*voxelSize;
+meshPoints(1,:) = voxelGridOrigin(1) + points(2,:)*voxelSize; % x y axes are swapped from isosurface
+meshPoints(2,:) = voxelGridOrigin(2) + points(1,:)*voxelSize;
 meshPoints(3,:) = voxelGridOrigin(3) + points(3,:)*voxelSize;
 
 % Write header for mesh file
