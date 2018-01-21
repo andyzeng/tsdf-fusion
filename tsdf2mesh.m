@@ -17,7 +17,7 @@ tsdf = fread(fid,voxelGridDim(1)*voxelGridDim(2)*voxelGridDim(3),'single');
 fclose(fid);
 
 % Convert from TSDF to mesh  
-tsdf = reshape(tsdf,[voxelGridDimX,voxelGridDimY,voxelGridDimZ]);
+tsdf = reshape(tsdf,[voxelGridDim(1),voxelGridDim(2),voxelGridDim(3)]);
 fv = isosurface(tsdf,0);
 points = fv.vertices';
 faces = fv.faces';
