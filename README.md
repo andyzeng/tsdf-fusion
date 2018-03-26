@@ -2,11 +2,11 @@
 
 ![Teaser](teaser.jpg?raw=true)
 
-CUDA/C++ code to fuse multiple registered depth maps into a projective truncated signed distance function (TSDF) voxel volume, which can then be used to create high quality 3D surface meshes and point clouds.
+CUDA/C++ code to fuse multiple registered depth maps into a projective truncated signed distance function (TSDF) voxel volume, which can then be used to create high quality 3D surface meshes and point clouds. Tested on Ubuntu 14.04 and 16.04.
 
 Looking for an older version? See [here](old-version).
 
-This repository is a part of [Andy's Code Collection](http://www.cs.princeton.edu/~andyz).
+This repository is a part of [Andy's Code Collection](http://andyzeng.github.io/).
 
 ## Change Log
 * **Nov. 1, 2017.** Bug fix: `tsdf2mesh.m` now properly generates a mesh in camera coordinates instead of voxel coordinates.
