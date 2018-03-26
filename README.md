@@ -20,6 +20,8 @@ This repository is a part of [Andy's Code Collection](http://www.cs.princeton.ed
 ## Demo
 This demo fuses 50 registered depth maps from directory `data/rgbd-frames` into a projective TSDF voxel volume, and creates a 3D surface point cloud `tsdf.ply`, which can be visualized with a 3D viewer like [Meshlab](http://www.meshlab.net/).
 
+**Note**: Input depth maps should be saved in format: 16-bit PNG, depth in millimeters.
+
 ```shell
 ./compile.sh # compiles demo executable
 ./demo # 3D point cloud saved to tsdf.ply and voxel grid saved to tsdf.bin
